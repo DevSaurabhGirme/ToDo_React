@@ -15,22 +15,22 @@ const style = {
 }
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
 
 // Create todo
 // Read todo from firebase
 
-  useEffect(() =>{
-    const q = query(collection(db, 'todos'))
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      let todosArr = []
-      querySnapshot.forEach((doc) => {
-        todosArr.push({...doc.data(), id: doc.id})
-      });
-      setTodos(todosArr)
-    })
-    return () => unsubscribe()
-  },[])
+useEffect(() =>{
+const q = query(collection(db, 'todos'))
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  let todosArr = []
+  querySnapshot.forEach((doc) => {
+    todosArr.push({...doc.data(), id: doc.id})
+  });
+  setTodos(todosArr)
+})
+return () => unsubscribe()
+},[])
 
 // Update todo in firebase
 // Delete todo
