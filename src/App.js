@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {AiOutlinePlus} from 'react-icons/ai'
 import Todo from './Todo'
 import {db} from './firebase'
-import {query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc} from 'firebase/firestore'
+import {query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from 'firebase/firestore'
 
 const style = {
   bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0]`,
